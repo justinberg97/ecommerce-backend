@@ -16,34 +16,31 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    maker: {
-      type: DataTypes.STRING,
+    price: {
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
+      validate: {
+        isDecimal: true,
+      },
     },
-    grape: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    vintage_date: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    abv: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    rating: {
-      type: DataTypes.STRING,
-    },
-    user_id: {
+    stock: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 10,
+      validate: {
+        isNumberic: true,
+      },
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
-        model: "user",
-        key: "id",
+        model: 'category',
+        key: 'id'
       },
     },
   },
