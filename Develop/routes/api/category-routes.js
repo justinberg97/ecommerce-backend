@@ -9,8 +9,10 @@ router.get('/', (req, res) => {
   Category.findAll({
     include: [Product],
   })
-  .then((data) => res.json(data))
-  .catch(err => res.status(500).json(err));
+  .then(data => res.status(200).json(data))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
 });
 
 router.get('/:id', (req, res) => {
@@ -27,12 +29,16 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new category
   Category.create(req.body)
+
   .then(data => res.status(200).json(data))
-  .catch(err => 
+  .catch(err => {
     console.log(err);
-    res.status(400).json(err))
+    res.status(500).json(err);
+
+  });
+
+  // create a new tag
 });
 
 router.put('/:id', (req, res) => {
@@ -54,8 +60,14 @@ router.delete('/:id', (req, res) => {
     where: {
       id: req.params.id,
     }
-  )
-  // delete a category by its `id` value
+  })
+  .then(data => res.status(200).json(data))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  
+  });
+  // delete on tag by its `id` value
 });
 
 module.exports = router;

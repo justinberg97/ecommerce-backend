@@ -15,24 +15,39 @@ router.get('/', (req, res) => {
     ],
 
   })
-  // find all products
-  // be sure to include its associated Category and Tag data
+  .then(data => res.status(200).json(data))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+
 });
+
+});
+// find all products
+  // be sure to include its associated Category and Tag data
 
 // get one product
 router.get('/:id', (req, res) => {
-  Product.findByPk(req.params.id {
+  Tag.findByPk(req.params.id, {
     include: [
-      Category, 
+      Category,
       {
         model: Tag,
         through: ProductTag
       }
     ]
   })
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+  .then(data => res.status(200).json(data))
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+
+  });
+  // find a single tag by its `id`
+  // be sure to include its associated Product data
 });
+
+
 
 // create new product
 router.post('/', (req, res) => {
