@@ -20,4 +20,7 @@ THEN I am able to successfully create, update, and delete data in my database
 
 # Github Link 
 
+https://github.com/justinberg97/ecommerce-backend
+
 # Video Tutorial Link 
+
