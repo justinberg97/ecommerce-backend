@@ -20,44 +20,6 @@ THEN I am able to successfully create, update, and delete data in my database
 
 # Github Link 
 
+https://github.com/justinberg97/ecommerce-backend
+
 # Video Tutorial Link 
-
-Category Post Route: 
-{
-	"category_name": "Suspenders"
-}
-
-Product Post Route: 
-
-{
-    "product_name": "Dallas Cowboys Shirt", 
-    "price": 20.00,
-    "stock": 50,
-    "category_id": 33,
-    "tagIds": [1, 2, 3, 4]
-}
-
-Tag Post Route: 
-
-{
-    "tag_name": "Football"
-}
-
-Category Put Route: 
-{
-    "category_name": "short sleeve-shirts"
-}
-
-Product Put Route: 
-{
-    "product_name": "Great Dallas Cowboys Shirt", 
-    "price": 20.00,
-    "stock": 50,
-    "category_id": 33,
-    "tagIds": [1, 2, 3, 4]
-}
-
-Tag Put route: 
-{
-    "tag_name": "Cool Dallas Shirt"
-}
