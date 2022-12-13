@@ -9,24 +9,25 @@ router.get('/', (req, res) => {
   Category.findAll({
     include: [Product],
   })
-  .then(data => res.status(200).json(data))
+  .then((data) => res.json(data))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
 });
 
+});
+
 router.get('/:id', (req, res) => {
   Category.findByPk(req.params.id)
-  include: [Product]
-})
   .then((data) => res.json(data))
   .catch(err => {
     console.log(err);
-    res.status(500)
   });
+})
   // find one category by its `id` value
   // be sure to include its associated Products
-});
+
+
 
 router.post('/', (req, res) => {
   Category.create(req.body)

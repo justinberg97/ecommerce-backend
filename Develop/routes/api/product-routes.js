@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
 
 // get one product
 router.get('/:id', (req, res) => {
-  Tag.findByPk(req.params.id, {
+  Product.findByPk(req.params.id, {
     include: [
       Category,
       {
